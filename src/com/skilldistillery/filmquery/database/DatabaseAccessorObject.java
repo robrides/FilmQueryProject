@@ -15,8 +15,8 @@ import com.skilldistillery.filmquery.entities.Film;
 public class DatabaseAccessorObject implements DatabaseAccessor {
 
 	private static final String URL = "jdbc:mysql://localhost:3306/sdvid?useSSL=false";
-	private static final String user = "student";
-	private static final String pwd = "student";
+	private static final String USER = "student";
+	private static final String PWD = "student";
 
 	static {
 		try {
@@ -29,7 +29,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 
 	public ArrayList<Integer> searchFilm(String searchTerm, DatabaseAccessor db) {
 		String sql = "SELECT film.id FROM film WHERE (film.title LIKE ? OR film.description LIKE ?)";
-		try (Connection conn = DriverManager.getConnection(URL, user, pwd);
+		try (Connection conn = DriverManager.getConnection(URL, USER, PWD);
 				PreparedStatement pst = conn.prepareStatement(sql);) {
 			pst.setString(1, "%" + searchTerm + "%");
 			pst.setString(2, "%" + searchTerm + "%");
@@ -52,7 +52,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 	public Film findFilmById(int filmId) {
 		// User Story 4 implemented in this query
 		String sql = "SELECT film.id, film.title, film.description, film.release_year, language.name, film.rental_duration, film.rental_rate, film.length, film.replacement_cost, film.rating, film.special_features FROM film JOIN language ON language.id = film.language_id WHERE film.id = ?";
-		try (Connection conn = DriverManager.getConnection(URL, user, pwd);
+		try (Connection conn = DriverManager.getConnection(URL, USER, PWD);
 				PreparedStatement pst = conn.prepareStatement(sql);)
 
 		{
@@ -81,7 +81,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 		List<Actor> actorList = new ArrayList<>();
 
 		String sql = "SELECT actor.id, actor.first_name, actor.last_name FROM actor JOIN film_actor ON film_actor.actor_id = actor.id JOIN film ON film.id = film_actor.film_id WHERE film.id = ?";
-		try (Connection conn = DriverManager.getConnection(URL, user, pwd);
+		try (Connection conn = DriverManager.getConnection(URL, USER, PWD);
 				PreparedStatement pst = conn.prepareStatement(sql);)
 
 		{
@@ -106,7 +106,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 		List<Category> categoryList = new ArrayList<>();
 
 		String sql = "SELECT film.id, category.name FROM category JOIN film_category ON film_category.category_id = category.id JOIN film ON film.id = film_category.film_id WHERE film.id = ?";
-		try (Connection conn = DriverManager.getConnection(URL, user, pwd);
+		try (Connection conn = DriverManager.getConnection(URL, USER, PWD);
 				PreparedStatement pst = conn.prepareStatement(sql);)
 
 		{
@@ -128,7 +128,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 	public Actor findActorById(int actorId) {
 
 		String sql = "SELECT actor.id, actor.first_name, actor.last_name FROM actor WHERE actor.id = ?";
-		try (Connection conn = DriverManager.getConnection(URL, user, pwd);
+		try (Connection conn = DriverManager.getConnection(URL, USER, PWD);
 				PreparedStatement pst = conn.prepareStatement(sql);)
 
 		{

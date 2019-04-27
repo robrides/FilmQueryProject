@@ -156,7 +156,7 @@ public class Film {
 		sb.append("\nRental Duration in Days: " + rentalDuration + ", Rental Rate: " + rentalRate);
 		sb.append("\nLength min: " + length + ", Replacement Cost: $" + replacementCost);
 		sb.append("\nRating: " + rating + ", Special Features: " + specitalFeatures + "\n");
-
+		sb.append("Cast: ");
 		for (int i = 0; i < cast.size(); i++) {
 			sb.append(cast.get(i));
 			if (i != cast.size() - 1) {

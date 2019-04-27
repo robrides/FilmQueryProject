@@ -41,7 +41,7 @@ public class Actor {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		
-		sb.append("Actor Id: " + id + " " + firstName + " " + lastName);
+		sb.append(firstName + " " + lastName);
 		
 		return sb.toString();
 	}
