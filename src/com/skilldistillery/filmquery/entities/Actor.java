@@ -2,22 +2,22 @@ package com.skilldistillery.filmquery.entities;
 
 public class Actor {
 
-	private String id;
+	private int id;
 	private String firstName;
 	private String lastName;
-	
-	public Actor(String id, String firstName, String lastName) {
+
+	public Actor(int id, String firstName, String lastName) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -40,7 +40,9 @@ public class Actor {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("\nActor Id: " + id + " " + firstName + " " + lastName + "\n");
+		
+		sb.append("Actor Id: " + id + " " + firstName + " " + lastName);
+		
 		return sb.toString();
 	}
 
@@ -49,7 +51,7 @@ public class Actor {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + id;
 		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
 		return result;
 	}
@@ -68,10 +70,7 @@ public class Actor {
 				return false;
 		} else if (!firstName.equals(other.firstName))
 			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
+		if (id != other.id)
 			return false;
 		if (lastName == null) {
 			if (other.lastName != null)
@@ -80,6 +79,5 @@ public class Actor {
 			return false;
 		return true;
 	}
-	
-	
+
 }

@@ -1,6 +1,7 @@
 package com.skilldistillery.filmquery.app;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import com.skilldistillery.filmquery.database.DatabaseAccessor;
@@ -19,7 +20,7 @@ public class FilmQueryApp {
 
 	private void test() {
 		Film film = db.findFilmById(1);
-		System.out.println(film); // use toString of film
+		System.out.println(film); 
 	}
 
 	private void launch() {
@@ -31,23 +32,27 @@ public class FilmQueryApp {
 	private void startUserInterface(Scanner input) {
 		System.out.print("Welcom to the Film Query App\n");
 		int choice = 0;
+		
+		// User Story 1
 		DOLOOP: do {
 			int filmId = 0;
 			String searchTerm = "";
-			System.out.println("\n\nPlease chose from the following menu: ");
+			System.out.println("\nPlease chose from the following menu: ");
 			System.out.println("1) Look up a film by its id. ");
 			System.out.println("2) Look up a film by a search keyword.");
 			System.out.println("3) Exit the application.");
 			choice = input.nextInt();
 
 			switch (choice) {
-			case 1:
+			case 1: // User Story 2
 				System.out.print("\nEnter a film ID >> ");
+				
 				// Handles non-numeric input
 				try {
 					filmId = input.nextInt();
-				} catch (Exception e) {
-					System.out.println("Invalid input, please try again.");
+				} catch (InputMismatchException e) {
+					System.err.println("Invalid input, please try again.\n>> ");
+					input.nextLine();
 					filmId = input.nextInt();
 				}
 
@@ -57,9 +62,15 @@ public class FilmQueryApp {
 					System.out.print("\nEnter a film ID >> ");
 					filmId = input.nextInt();
 				}
-				System.out.println(db.findFilmById(filmId) + "\n\n");
+				Film film = db.findFilmById(filmId);
+				if (film != null) {
+				System.out.println(film + "\n");
+				} else {
+					System.out.println("No films found.\n");
+				}
+					
 				break;
-			case 2:
+			case 2: // User Story 3
 				System.out.print("\nEnter a search term >> ");
 				searchTerm = input.next();
 				ArrayList<Integer> filmsFound = new ArrayList<Integer>();
