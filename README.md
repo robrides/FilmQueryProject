@@ -7,7 +7,7 @@
 * Program Purpose
   * This project incorporates the Data Access Object enabling the Java application to interact with a MySQL database. The database consists of 14 tables requiring join queries to properly retrieve relevant data.
 
-### UML Diagram
+#### UML Diagram
 
 ![UML Diagram](https://github.com/robrides/FilmQueryProject/blob/master/Model.jpg)
 
