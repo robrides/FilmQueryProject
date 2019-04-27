@@ -14,13 +14,13 @@ public class FilmQueryApp {
 
 	public static void main(String[] args) {
 		FilmQueryApp app = new FilmQueryApp();
-//		app.test();
-		app.launch();
+		app.test();
+//		app.launch();
 	}
 
 	private void test() {
 		Film film = db.findFilmById(1);
-		System.out.println(film); 
+		System.out.println(film);
 	}
 
 	private void launch() {
@@ -32,7 +32,7 @@ public class FilmQueryApp {
 	private void startUserInterface(Scanner input) {
 		System.out.print("Welcom to the Film Query App\n");
 		int choice = 0;
-		
+
 		// User Story 1
 		DOLOOP: do {
 			int filmId = 0;
@@ -46,12 +46,12 @@ public class FilmQueryApp {
 			switch (choice) {
 			case 1: // User Story 2
 				System.out.print("\nEnter a film ID >> ");
-				
+
 				// Handles non-numeric input
 				try {
 					filmId = input.nextInt();
 				} catch (InputMismatchException e) {
-					System.err.println("Invalid input, please try again.\n>> ");
+					System.err.println("Invalid input, please enter a number.\n>> ");
 					input.nextLine();
 					filmId = input.nextInt();
 				}
@@ -64,11 +64,11 @@ public class FilmQueryApp {
 				}
 				Film film = db.findFilmById(filmId);
 				if (film != null) {
-				System.out.println(film + "\n");
+					System.out.println(film + "\n");
 				} else {
 					System.out.println("No films found.\n");
 				}
-					
+
 				break;
 			case 2: // User Story 3
 				System.out.print("\nEnter a search term >> ");
@@ -86,6 +86,8 @@ public class FilmQueryApp {
 				break;
 			case 3:
 				break DOLOOP;
+			default:
+				break;
 			}
 
 		} while (true);
