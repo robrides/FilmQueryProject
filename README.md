@@ -12,10 +12,10 @@
 
   * Compile and run the project. The user is presented with a menu of options to select.  Follow the online prompts to navigate through the application.
 
-### Concepts and Technologies Used
+#### Concepts and Technologies Used
 
   * Object-Oriented Design, abstraction, polymorphism, inheritance, encapsulation, interfaces, Java IO, Java Data Access Object, MySQL, Maven Project Object Model, Eclipse, Git, DRY
 
-### Lessons Learned
+#### Lessons Learned
 
   * Test SQL queries against the database prior to placing them in the application.  Check for null lists before trying to print them. Ensure the database is running.
