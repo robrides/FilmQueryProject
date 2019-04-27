@@ -1,1 +1,3 @@
-## Skill Distillery Film Query Project
+## Film Query Project
+
+#### Skill Distillery Homework - Week 6

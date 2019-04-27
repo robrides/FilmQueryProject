@@ -39,7 +39,9 @@ public class Actor {
 
 	@Override
 	public String toString() {
-		return "Actor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
+		StringBuilder sb = new StringBuilder();
+		sb.append("\nActor Id: " + id + " " + firstName + " " + lastName + "\n");
+		return sb.toString();
 	}
 
 	@Override
