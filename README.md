@@ -8,7 +8,7 @@
   * This project incorporates the Data Access Object enabling the Java application to interact with a MySQL database. The database consists of 14 tables requiring join queries to properly retrieve relevant data.
 
 * How to use this project
-  * Compile and run the project. The user is presented with a menu of options to select.  Follow the online prompts to navigate through the application.
+  * First obtain a copy of the database from Skill Distillery. With the database running on the local machine, compile and run the project. The user is presented with a menu of options to select.  Follow the online prompts to navigate through the application.
 
 #### Concepts and Technologies Used
 
