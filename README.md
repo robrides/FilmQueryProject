@@ -11,7 +11,7 @@
 
 ![UML Diagram](https://github.com/robrides/FilmQueryProject/blob/master/Model.jpg)
 
-* How to use this project
+### How to use this project
   * First obtain a copy of the database from Skill Distillery. With the database running on the local machine, compile and run the project. The user is presented with a menu of options to select.  Follow the online prompts to navigate through the application.
 
 #### Concepts and Technologies Used
