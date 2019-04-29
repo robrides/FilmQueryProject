@@ -166,6 +166,7 @@ public class Film {
 				sb.append("\n");
 			}
 		}
+		sb.append("\n");
 		for (int i = 0; i < categories.size(); i++) {
 			sb.append(categories.get(i));
 			if (i != categories.size() - 1) {
