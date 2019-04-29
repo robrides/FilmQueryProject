@@ -153,7 +153,7 @@ public class Film {
 		sb.append("\nFilm id: " + id + ", Title: " + title);
 		sb.append("\nDescription: " + description);
 		sb.append("\nReleased: " + releaseYear + ", Language: " + language);
-		sb.append("\nRental Duration in Days: " + rentalDuration + ", Rental Rate: " + rentalRate);
+		sb.append("\nRental Duration in Days: " + rentalDuration + ", Rental Rate: $" + rentalRate);
 		sb.append("\nLength min: " + length + ", Replacement Cost: $" + replacementCost);
 		sb.append("\nRating: " + rating + ", Special Features: " + specitalFeatures + "\n");
 		sb.append("Cast: ");
