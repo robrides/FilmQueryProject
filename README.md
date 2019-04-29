@@ -20,4 +20,4 @@
 
 #### Lessons Learned
 
-  * Test SQL queries against the database prior to placing them in the application.  Check for null lists before trying to print them. Ensure the database is running.
+  * Test SQL queries against the database prior to placing them in the application.  Check for null lists before trying to print them. Ensure the database is running.  The first call to the RecordSet.next() method gets you into the record set.  The next call returns a record so ensure you are not checkinig twice before using the result.
